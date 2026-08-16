@@ -1,5 +1,8 @@
 function Resultado({
-    mensagem, tentativas, jogoFinalizado
+    mensagem,
+    tentativas,
+    jogoFinalizado,
+    tipoMensagem
 }) {
     if (mensagem === '') {
         return (
@@ -8,11 +11,14 @@ function Resultado({
             </div>
         )
     }
-    
+
     return (
-        <div className={`resultado ${jogoFinalizado ? 'acerto' : ''}`}>
+        <div className={`resultado ${tipoMensagem}`}>
             <p>{mensagem}</p>
-            <span>Tentativas: <strong>{tentativas}</strong></span>
+
+            <span>
+                Tentativas: <strong>{tentativas}</strong>
+            </span>
         </div>
     )
 }
